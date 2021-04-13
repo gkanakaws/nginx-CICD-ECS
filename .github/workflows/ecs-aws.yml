@@ -52,7 +52,7 @@ jobs:
           then echo "Commit status failed. Canceling execution"; 
           exit 1; 
         fi
-        
+
     - name: Checkout
       uses: actions/checkout@v2
 
@@ -93,6 +93,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: nginxcicsvc
+        service: nginxcicdsvc
         cluster: ECSNestedTraining
         wait-for-service-stability: true
